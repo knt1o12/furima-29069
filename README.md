@@ -82,7 +82,7 @@ has_one : shipping_address
 |address            |string |null: false      |
 |building           |string |                 |
 |phone_number       |string |null: false      |
-|purchase_record_id |string |null: false      |
+|purchase_record_id |integer|null: false      |
 <!--
  郵便番号
  都道府県
