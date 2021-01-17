@@ -1,20 +1,30 @@
 ##usersテーブル
 <!-- ユーザー情報 -->
 
-|Column  |Type  |Options      |
-|--------|-------|------------|
-|nickname|varchar|null: false |
-|email   |varchar|unique: true|
-|password|char   |null: false |
+|Column            |Type  |Options     |
+|------------------|------|------------|
+|nickname          |string|null: false |
+|email             |string|null: false |
+|encrypted_password|string|null: false |
+|last_name         |string|null: false |
+|first_name        |string|null: false |
+|last_name_kana    |string|null: false |
+|first_name_kana   |string|null: false |
+|birthday          |string|null: false |
 <!-- 
 ニックネーム
 メールアドレス
 パスワード
+姓
+名
+姓（フリガナ）
+名（フリガナ）
+誕生日
  -->
 
 ### Association
-has_many :items
-has_one :purchase_record
+has_many :item
+has_many :purchase_record
 
 ##itemsテーブル
 <!-- 商品情報 -->
@@ -64,19 +74,23 @@ has_one : shipping_address
 ##shipping_addressテーブル
 <!-- 住所（発送先) -->
 
-|Column      |Type   |Options          |
-|------------|-------|-----------------|
-|postal code |integer|null: false      |
-|prefecture  |string |foregin_key: true|
-|municipality|string |null: false      |
-|address     |string |null: false      |
-|phone_number|integer|null: false      |
+|Column             |Type   |Options          |
+|-------------------|-------|-----------------|
+|postal code        |string |null: false      |
+|prefecture_id      |integer|null:false       |
+|municipality       |string |null: false      |
+|address            |string |null: false      |
+|building           |string |null: false      |
+|phone_number       |string |null: false      |
+|purchase_record_id |string |null: false      |
 <!--
  郵便番号
  都道府県
  市区町村
  番地
+ 建物名
  電話番号
+ 購入記録id
  -->
 
  ### Association
