@@ -61,10 +61,10 @@ has_one : purchase_record
 ##purchase_recordsテーブル
 <!-- 購入記録 -->
 
-|Column  |Type       |Options      |
-|--------|-----------|------------|
-|user    |references |foreign_key |
-|item    |references |foreign_key |
+|Column  |Type       |Options           |
+|--------|-----------|------------------|
+|user    |references |foreign_key: true |
+|item    |references |foreign_key: true |
 
 ### Association
 belongs_to :user
@@ -82,7 +82,7 @@ has_one : shipping_address
 |address            |string    |null: false      |
 |building           |string    |                 |
 |phone_number       |string    |null: false      |
-|purchase_record    |references|foreign_key      |
+|purchase_record    |references|foreign_key: true|
 <!--
  郵便番号
  都道府県
